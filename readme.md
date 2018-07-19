@@ -9,6 +9,8 @@
 
 欢迎 `Issue` 和 `Pull` ❤️, 最好 `Pull` 👏
 
+> 本库旨在一个翻译小结的入口, 没有存放 翻译内容, 因为有网址
+
 [更多其他中文翻译](https://github.com/chinanf-boy/chinese-translate-list)
 
 ---
@@ -23,30 +25,31 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-    - [https://www.learnstorybook.com/](#httpswwwlearnstorybookcom)
-    - [如果需要 Issue 或 Pull ,请移至 https://github.com/chromaui/learnstorybook.com/tree/master/content/react/zh](#%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81-issue-%E6%88%96-pull-%E8%AF%B7%E7%A7%BB%E8%87%B3-httpsgithubcomchromauilearnstorybookcomtreemastercontentreactzh)
+- [书的网址](#%E4%B9%A6%E7%9A%84%E7%BD%91%E5%9D%80)
+- [如果需要 `Issue 或 Pull`](#%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81-issue-%E6%88%96-pull)
 - [学习StoryBook](#%E5%AD%A6%E4%B9%A0storybook)
-  - [帮忙](#%E5%B8%AE%E5%BF%99)
-  - [示例应用代码](#%E7%A4%BA%E4%BE%8B%E5%BA%94%E7%94%A8%E4%BB%A3%E7%A0%81)
-  - [谁制作了LearnStorybook.com?](#%E8%B0%81%E5%88%B6%E4%BD%9C%E4%BA%86learnstorybookcom)
-  - [开发·](#%E5%BC%80%E5%8F%91%C2%B7)
-  - [贡献者](#%E8%B4%A1%E7%8C%AE%E8%80%85)
+- [帮忙](#%E5%B8%AE%E5%BF%99)
+- [示例应用代码](#%E7%A4%BA%E4%BE%8B%E5%BA%94%E7%94%A8%E4%BB%A3%E7%A0%81)
+- [谁制作了LearnStorybook.com?](#%E8%B0%81%E5%88%B6%E4%BD%9C%E4%BA%86learnstorybookcom)
+- [开发·](#%E5%BC%80%E5%8F%91%C2%B7)
+- [贡献者](#%E8%B4%A1%E7%8C%AE%E8%80%85)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
----
 
-> 本库旨在一个翻译小结的入口, 没有存放 翻译内容, 因为有网址
+## 书的网址
 
-### https://www.learnstorybook.com/
+https://www.learnstorybook.com/
 
 或者 https://github.com/chinanf-boy/learnstorybook.com 
 
 > 这是 fork原库后的整个 repo 翻译
 
-### 如果需要 Issue 或 Pull ,请移至 https://github.com/chromaui/learnstorybook.com/tree/master/content/react/zh
+## 如果需要 `Issue 或 Pull`
 
-# 学习StoryBook
+请移至 https://github.com/chromaui/learnstorybook.com/tree/master/content/react/zh
+
+## 学习StoryBook
 
 学习`故事书-Storybook`通过 从头开始构建UI来教你故事书. 我们将介绍 从构建和测试到部署 的核心概念. 本教程旨在帮助您快速,平易近人地掌握 Storybook最佳实践. 
 
