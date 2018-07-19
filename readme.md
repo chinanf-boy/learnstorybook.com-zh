@@ -23,6 +23,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
+    - [https://www.learnstorybook.com/](#httpswwwlearnstorybookcom)
+    - [如果需要 Issue 或 Pull ,请移至 https://github.com/chromaui/learnstorybook.com/tree/master/content/react/zh](#%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81-issue-%E6%88%96-pull-%E8%AF%B7%E7%A7%BB%E8%87%B3-httpsgithubcomchromauilearnstorybookcomtreemastercontentreactzh)
 - [学习StoryBook](#%E5%AD%A6%E4%B9%A0storybook)
   - [帮忙](#%E5%B8%AE%E5%BF%99)
   - [示例应用代码](#%E7%A4%BA%E4%BE%8B%E5%BA%94%E7%94%A8%E4%BB%A3%E7%A0%81)
@@ -34,6 +36,15 @@
 
 ---
 
+> 本库旨在一个翻译小结的入口, 没有存放 翻译内容, 因为有网址
+
+### https://www.learnstorybook.com/
+
+或者 https://github.com/chinanf-boy/learnstorybook.com 
+
+> 这是 fork原库后的整个 repo 翻译
+
+### 如果需要 Issue 或 Pull ,请移至 https://github.com/chromaui/learnstorybook.com/tree/master/content/react/zh
 
 # 学习StoryBook
 
@@ -69,4 +80,5 @@
 -   [Dominic Nguyen @domyen](https://twitter.com/domyen)
 -   [CarlosIvánSuarez@icarlossz](https://twitter.com/icarlossz)
 -   [Luciano M. Guasco @luchux](https://twitter.com/luchux)
+- 当然还有我·
 -   您?[成为OSS的贡献者](https://www.learnstorybook.com/contribute/)
