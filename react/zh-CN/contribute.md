@@ -7,7 +7,7 @@ description: '帮助我们与世界分享 Storybook '
 
 鼓励 LearnStorybook 的贡献! 如果它像 语法或标点符号 那样小，请打开 PR。如果这是一个更大的变化，[添加一个问题](https://github.com/hichroma/learnstorybook.com/issues)讨论。
 
-Learn Storybook 主要由社区创建和维护，因此我们需要每个人的帮助以使其保持最新，并确保随着时间的推移，磨砂任何粗糙的边缘。 对所有帮助致谢！
+Learn Storybook 主要由社区创建和维护，因此我们需要每个人的帮助以使其保持最新，并确保随着时间的推移，磨砂任何粗糙的边缘。 对所有帮助致谢！🙏
 
 ## 翻译
 

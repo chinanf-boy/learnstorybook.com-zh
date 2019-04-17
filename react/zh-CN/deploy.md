@@ -56,13 +56,13 @@ $ git commit -m "taskbox UI"
 
 ![GitHub setup](/github-create-taskbox.png)
 
-在新的 repo 设置中，复制 repo 的原始 URL，并使用以下命令将其添加到 git 项目中:
+在新的 存储库 设置中，复制 存储库 的原始 URL，并使用以下命令将其添加到 git 项目中:
 
 ```bash
 $ git remote add origin https://github.com/<your username>/taskbox.git
 ```
 
-最后将回购推送到 GitHub
+最后将存储库推送到 GitHub
 
 ```bash
 $ git push -u origin master
@@ -82,9 +82,9 @@ Netlify 内置了持续部署服务，使我们无需配置自己的 CI，即可
 
 然后单击 GitHub 按钮将，Netlify 连接到 GitHub。 这允许它访问我们的远程 Taskbox 仓库。
 
-现在从选项列表中选择任务框 GitHub repo。
+现在从选项列表中选择任务框 GitHub 存储库。
 
-![Netlify connect to repo](/netlify-account-picker.png)
+![Netlify connect to 存储库](/netlify-account-picker.png)
 
 通过突出显示在其 CI 中运行的构建命令，以及输出静态站点的目录 来配置 Netlify。 对于分支选择 `master`。 目录是`storybook-static`。 `yarn build-storybook`构建。
 
