@@ -7,22 +7,21 @@
 
 [commit]: https://github.com/chromaui/learnstorybook.com/tree/ef5fcc2b27be84dd9cc68bc40a5455a092e57b14
 
-## 校对 ✅
+## 
+ ✅
 
 <!-- doc-templite START generated -->
-<!-- time = '2018 7.19' -->
-
-| 翻译的原文 | 与日期       | 最新更新 | 更多                       |
-| ---------- | ------------ | -------- | -------------------------- |
-| [commit]   | ⏰ 2018 7.19 | ![last]  | [中文翻译][translate-list] |
-
-[last]: https://img.shields.io/github/last-commit/.svg
-[commit]: https://github.com//tree/
-
-<!-- doc-templite END generated -->
+<!-- repo = 'chromaui/learnstorybook.com' -->
+<!-- time = '2019-03-13' -->
+<!-- commit = 'e1c0fca072e4d550065870b4b8376ce65a394d68' -->
+翻译的原文 | 与日期 | 最新更新 | 更多
+---|---|---|---
+[commit] | ⏰ 2019-03-13 | ![last] | [中文翻译][translate-list]
 
 [last]: https://img.shields.io/github/last-commit/chromaui/learnstorybook.com.svg
-[more]: https://github.com/chinanf-boy/chinese-translate-list
+[commit]: https://github.com/chromaui/learnstorybook.com/tree/e1c0fca072e4d550065870b4b8376ce65a394d68
+
+<!-- doc-templite END generated -->
 
 > 本库旨在一个翻译小结的入口, 没有存放 翻译内容, 因为有网址
 
