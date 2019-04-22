@@ -84,9 +84,9 @@ Storybook 中，有两个基本的组织级别：该组件与其孩子的故事�
   - 故事
   - 故事
 
-要开始 Storybook，我们先运行`storiesOf()`函数，注册组件。我们为组件添加 _显示名称 —— Storybook 应用程序侧栏上，显示的名称_。
+为了启动故事书，我们首先调用`storiesOf()`函数来注册组件。我们为组件添加了一个显示名称——这个名称出现在故事书应用程序的侧边栏上。
 
-`action()`允许我们创建一个回调，当 click(点击) 发生，会在 Storybook UI 的 **action** 面板中出现。因此，当我们构建了一个 pin 按钮，我们能够在测试 UI 中，确定这个按钮是否点击成功。
+`action()`允许我们创建出现在**行动**单击时故事书用户界面的面板。因此，当我们构建一个 pin 按钮时，我们将能够在测试 UI 中确定按钮单击是否成功。
 
 由于我们需要将相同的一组操作，传递给组件的所有组合，因此将它们捆绑到`actions`变量，并使用 React 的`{...actions}`的`porps`扩展，这样可以一次传递完它们。 `<Task {...actions}>`相当于`<Task onPinTask={actions.onPinTask} onArchiveTask={actions.onArchiveTask}>`。
 
@@ -212,7 +212,7 @@ export default Task;
 另一种同功能的方法是使用 JavaScript 类型系统，比如像 TypeScript，它来为组件属性创建类型。
 </div>
 
-## 组件构建!
+## 组件已构建!
 
 我们现在已成功构建了一个组件，没用到服务器，或运行整个前端应用程序。下一步是以类似的方式，逐个构建剩余的 Taskbox 组件。
 

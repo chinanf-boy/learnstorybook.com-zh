@@ -26,7 +26,7 @@ cd taskbox
 npx -p @storybook/cli sb init
 ```
 
-我们可以快速检查,我们的应用程序的各种命令是否正常工作:
+我们可以快速检查，我们的应用程序的各种命令是否正常工作:
 
 ```bash
 # 运行 测试引擎(Jest):
@@ -40,7 +40,7 @@ yarn start
 ```
 
 <div class="aside">
-  注意: 如果 <code>yarn test</code> 运行错误, 你可能需要安装 <code>watchman</code> ,具体问题来自 <a href="https://github.com/facebook/create-react-app/issues/871#issuecomment-252297884">这个Issue</a>。
+  注意: 如果 <code>yarn test</code> 运行错误, 你可能需要安装 <code>watchman</code> ，具体问题来自 <a href="https://github.com/facebook/create-react-app/issues/871#issuecomment-252297884">这个Issue</a>。
 </div>
 
 我们的三个前端应用程序模型: 自动化测试 (Jest) ，组件开发 (Storybook) 和 应用程序本身。

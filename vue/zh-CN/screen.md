@@ -1,19 +1,19 @@
 ---
-title: 'Construct a screen'
-tocTitle: 'Screens'
-description: 'Construct a screen out of components'
+title: '构建一个页面'
+tocTitle: '页面'
+description: '用组件构建一个页面'
 commit: b62db62
 ---
 
-# 构建一个屏幕
+# 构建一个页面
 
-我们专注于自下而上构建 UI;从小做起并增加复杂性。这样做使我们能够孤立地开发每个组件，找出其数据需求，并在 Storybook 中使用它。所有这些都无需站起服务器或构建屏幕！
+我们专注于从下到上构建 UI; 从小做起，并增加复杂性。这样做使我们能够独立，开发每个组件，找出其数据需求，并在 Storybook 中使用它。 所有这些，都无需启动服务器或构建出页面!
 
-在本章中，我们通过组合屏幕中的组件并在 Storybook 中开发该屏幕来继续提高复杂性。
+在本章中，我们通过将组件组成一个页面，并在 Storybook 中，开发该页面，来继续提高复杂性。
 
 ## 嵌套容器组件
 
-由于我们的应用程序非常简单，我们将构建的屏幕非常简单，只需简单地包装`TaskList`容器组件（通过 Vuex 提供自己的数据）在某些布局中并拉出顶层`error`商店外的字段（我们假设如果连接到我们的服务器有问题，我们将设置该字段）。让我们创造一个表现形式`PureInboxScreen.vue`在你的`src/components/`夹：
+由于我们的应用程序非常简单，我们将构建的页面非常简单，只需在某些布局中，简单包装`TaskList`容器组件 (通过 Vuex 提供数据)，并拉出 store 中的顶级`error`字段 (假设我们在连接到服务器时，遇到问题，我们将设置该字段) 。我们创建一个外型组件`PureInboxScreen.vue`，位于你的`src/components/`文件夹：
 
 ```html
 <template>
@@ -54,7 +54,7 @@ commit: b62db62
 </script>
 ```
 
-然后，我们可以创建一个容器，再次抓取数据`PureInboxScreen`在`src/components/InboxScreen.vue`：
+然后，我们可以创建一个容器，再次把数据抓进`src/components/InboxScreen.vue`的`PureInboxScreen`组件：
 
 ```html
 <template>
@@ -79,7 +79,7 @@ commit: b62db62
 </script>
 ```
 
-我们也改变了`App`用于渲染的组件`InboxScreen`（最终我们会使用路由器来选择正确的屏幕，但我们不用担心这一点）：
+我们也改变了`App`组件，用于渲染`InboxScreen` (最终我们会使用一个路由器(router)，来选择正确的页面，但在此不要担心) :
 
 ```html
 <template>
@@ -103,13 +103,13 @@ commit: b62db62
 </script>
 ```
 
-然而，事情变得有趣的是在故事书中渲染故事。
+然而，事情变得有趣的是，在 Storybook 中，渲染故事。
 
-正如我们之前看到的那样`TaskList`组件是一个**容器**这使得`PureTaskList`表现部分。根据定义，容器组件不能简单地单独呈现;他们希望通过一些上下文或连接到服务。这意味着要在 Storybook 中呈现容器，我们必须模拟（即提供假装版本）它所需的上下文或服务。
+正如，我们之前看到的那样，`TaskList`组件是一个 **容器**，渲染`PureTaskList`这个外观组件。 根据定义，容器组件不能独自，简单渲染; 他们希望获取一些上下文或连接到服务。 这意味着要在 Storybook 中，渲染容器，我们必须模拟 (即提供) 它所需的上下文或服务。
 
-放置时`TaskList`进入故事书，我们能够通过简单地渲染这个问题来回避这个问题`PureTaskList`并避免容器。我们会做类似的事情并渲染`PureInboxScreen`在故事书中也是。
+放`TaskList`，进入 Storybook，我们能够通过简单地渲染`PureTaskList`，避开容器组件，来避开这个问题。类似的做法，我们也会在 Storybook 中，渲染`PureInboxScreen`。
 
-但是，对于`PureInboxScreen`我们有一个问题，因为虽然`PureInboxScreen`本身就是表现，它的孩子，`TaskList`， 不是。从某种意义上说`PureInboxScreen`被“容器”污染了。所以，当我们设置我们的故事`src/components/PureInboxScreen.stories.js`：
+但是，对于`PureInboxScreen`我们有一个问题，因为虽然`PureInboxScreen`本身是外观组件，它的孩子`TaskList`， 不是。 从某种意义上说，`PureInboxScreen`被"容器"污染了。所以，当我们设置我们的故事`src/components/PureInboxScreen.stories.js`：
 
 ```javascript
 import {storiesOf} from '@storybook/vue';
@@ -130,21 +130,21 @@ storiesOf('PureInboxScreen', module)
   });
 ```
 
-我们看到了虽然`error`故事工作得很好，我们有一个问题`default`故事，因为`TaskList`没有要连接的 Vuex 商店。（在尝试测试时，您也会遇到类似的问题`PureInboxScreen`用单元测试）。
+我们看到了，虽然`error`故事工作得很好，我们`default`故事却有一个问题，因为`TaskList`没有要连接的 Vuex Store 。 (在尝试单元测试，测试`PureInboxScreen`时，您也会遇到类似的问题) 。
 
 ![Broken inbox](/broken-inboxscreen-vue.png)
 
-避免此问题的一种方法是永远不要在应用程序中的任何位置呈现容器组件，除非在最高级别，而是将所有数据要求传递到组件层次结构中。
+避免此问题的一种方法是，永远不要在应用程序中的任何位置，渲染容器组件，除非在最高级别，并将所有要求的数据，传递到组件层次结构中。
 
-但是，开发人员**将**不可避免地需要在组件层次结构中进一步渲染容器。如果我们想在 Storybook 中渲染大部分或全部应用程序（我们这样做！），我们需要一个解决此问题的方法。
+但是，开发人员 **将** 不可避免地需要在组件层次结构中，进一步渲染容器。 如果我们想要在 Storybook 中，渲染大部分或全部应用程序 (我们这样做!) ，我们需要一个解决此问题的方法。
 
 <div class="aside">
-As an aside, passing data down the hierarchy is a legitimate approach, especially when using <a href="http://graphql.org/">GraphQL</a>. It’s how we have built <a href="https://www.chromaticqa.com">Chromatic</a> alongside 670+ stories.
+另外，在层次结构中，传递数据是合法的方法，尤其是在使用 <a href="http://graphql.org/">GraphQL</a>。 这就是我们建立 <a href="https://chromaticqa.com">Chromatic</a> 的方式，有 800+ 故事。
 </div>
 
 ## 为故事提供背景
 
-好消息是很容易提供 Vuex 商店`PureInboxScreen`在一个故事！我们可以在故事文件中创建一个新商店，并将其作为故事的上下文传递：
+好消息是，在一个故事中， Vuex Store 很容易提供给 一个`PureInboxScreen`! 我们可以在故事文件中，创建一个新 Store，并将其，作为故事的上下文传递：
 
 ```javascript
 import {action} from '@storybook/addon-actions';
@@ -186,9 +186,9 @@ storiesOf('PureInboxScreen', module)
   });
 ```
 
-存在类似的方法来为其他数据库提供模拟的上下文，例如[Apollo](https://www.npmjs.com/package/apollo-storybook-decorator)，[Relay](https://github.com/orta/react-storybooks-relay-container)和别的。
+存在类似的方法，来为其他数据库提供模拟的上下文，例如[Apollo](https://www.npmjs.com/package/apollo-storybook-decorator)，[Relay](https://github.com/orta/react-storybooks-relay-container)和别的。
 
-在 Storybook 中循环浏览状态可以轻松测试我们是否已正确完成此操作：
+循环浏览 Storybook 中的状态，可以轻松测试，我们当前是否已完成:
 
 <video autoPlay muted playsInline loop >
 
@@ -200,7 +200,7 @@ storiesOf('PureInboxScreen', module)
 
 ## 组件驱动开发
 
-我们从底部开始`Task`，然后进展到`TaskList`，现在我们在这里使用全屏 UI。我们的`InboxScreen`容纳嵌套的容器组件并包括随附的故事。
+我们从底部的`Task`开始，然后进展到`TaskList`，现在我们在这里，使用全页面 UI。 我们的`InboxScreen`容纳了，一个嵌套的容器组件，并包括随附的故事。
 
 <video autoPlay muted playsInline loop style="width:480px; height:auto; margin: 0 auto;">
   <source
@@ -209,6 +209,6 @@ storiesOf('PureInboxScreen', module)
   />
 </video>
 
-[**Component-Driven Development**](https://blog.hichroma.com/component-driven-development-ce1109d56c8e)允许您在向上移动组件层次结构时逐渐扩展复杂性。其中的好处包括更集中的开发过程以及所有可能的 UI 排列的覆盖范围。简而言之，CDD 可以帮助您构建更高质量和更复杂的用户界面。
+[**组件驱动开发**](https://blog.hichroma.com/component-driven-development-ce1109d56c8e)允许您在往上移动组件层次结构时，逐渐扩展复杂性。 其中的好处包括，更集中的开发过程 ，以及所有可能的 UI 组合 的覆盖范围。 简而言之，CDD 可帮助您构建 更高质量和更复杂的用户界面。
 
-我们还没有完成 - 在构建 UI 时，工作不会结束。我们还需要确保它随着时间的推移保持耐用。
+我们还没有完成 - 在 UI 构建后，工作不会结束。 我们还需要确保它随着时间的推移，保持完好。

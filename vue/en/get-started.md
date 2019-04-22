@@ -1,7 +1,7 @@
 ---
-title: "Get started"
-tocTitle: "Get started"
-description: "Setup Vue Storybook in your development environment"
+title: 'Get started'
+tocTitle: 'Get started'
+description: 'Setup Vue Storybook in your development environment'
 commit: d1c4858
 ---
 
@@ -53,7 +53,7 @@ Taskbox reuses design elements from the GraphQL and React Tutorial [example app]
 
 ```html
 <style>
-@import './index.css';
+  @import './index.css';
 </style>
 ```
 

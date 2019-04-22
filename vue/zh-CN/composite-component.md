@@ -1,29 +1,29 @@
 ---
-title: 'Assemble a composite component'
-tocTitle: 'Composite component'
-description: 'Assemble a composite component out of simpler components'
+title: '组装，一个复合组件'
+tocTitle: '复合组件'
+description: '使用更简单的组件，组装一个复合组件'
 commit: c72f06f
 ---
 
-# 组装复合组件
+# 组装一个复合组件
 
-最后一章我们构建了第一个组件；本章扩展了我们学习构建 TaskList 的任务列表。让我们将组件组合在一起，看看在引入更多复杂性时会发生什么。
+上一章我们构建了第一个组件; 本章扩展学习，构建 TaskList ，一个任务列表。 让我们将组件，组合在一起，看看在引入更多复杂性时，会发生什么。
 
 ## 任务列表
 
-Taskbox 通过将其置于默认任务之上来强调固定任务。这产生了两种变体`TaskList`您需要为以下内容创建故事：默认项目以及默认和固定项目。
+Taskbox 通过将，选中任务，置于默认任务之上，来强调选中任务。这产生了`TaskList`的两种变体，您需要为以下内容创建故事: 默认项，以及默认与选中项。
 
 ![default and pinned tasks](/tasklist-states-1.png)
 
-以来`Task`我们可以异步发送数据**也**在没有连接的情况下需要加载状态进行渲染。此外，当没有任务时，需要空状态。
+`Task`可以异步发送数据，我们 **也**需要在没有连接的情况下，具有加载的渲染 _右图_。 此外，没有任务时，要有空的状态 _左图_。
 
 ![empty and loading tasks](/tasklist-states-2.png)
 
 ## 现在设置
 
-复合组件与其包含的基本组件没有太大区别。创建一个`TaskList`组件和随附的故事文件：`src/components/TaskList.vue`和`src/components/TaskList.stories.js`。
+复合组件，与其包含的基本组件没有太大区别。创建一个`TaskList`组件和对应的故事文件: `src/components/TaskList.vue`和`src/components/TaskList.stories.js`。
 
-从粗略的实现开始`TaskList`。你需要导入`Task`来自早期的组件，并将属性和操作作为输入传递。
+让我们开始粗略实现`TaskList`。你需要导入早期的`Task`组件，并将 属性和行为，作为输入传递。
 
 ```html
 <template>
@@ -73,7 +73,7 @@ Taskbox 通过将其置于默认任务之上来强调固定任务。这产生了
 </script>
 ```
 
-接下来创建`Tasklist`故事文件中的测试状态。
+接下来，在故事文件中，创建`Tasklist`的测试状态。
 
 ```javascript
 import {storiesOf} from '@storybook/vue';
@@ -132,15 +132,15 @@ storiesOf('TaskList', module)
   }));
 ```
 
-`addDecorator()`允许我们为每个任务的渲染添加一些“上下文”。在这种情况下，我们在列表周围添加填充，以便更容易进行可视化验证。
+`addDecorator()`允许我们为，每个任务的渲染，添加一些"上下文"。 在这种情况下，我们在列表，周围添加 _padding_，以便更容易进行视觉测试。
 
 <div class="aside">
-<a href="https://storybook.js.org/addons/introduction/#1-decorators"><b>Decorators</b></a> are a way to provide arbitrary wrappers to stories. In this case we’re using a decorator to add styling. They can also be used to add other context to components, as we'll see later.
+<a href="https://storybook.js.org/addons/introduction/#1-decorators"><b>Decorators-装饰器</b></a> 是一种为 stories 提供任意包装的方法。 在这种情况下，我们使用装饰器来添加样式。还可以用来，添加其他上下文到组件中，我们后面会看到。
 </div>
 
-`task`提供一个的形状`Task`我们创建和导出的`Task.stories.js`文件。同样的，`methods`定义 a 的动作（模拟回调）`Task`组件期望，其中`TaskList`也需要。
+`task`提供一个`Task`的形状，来自我们创建和导出的`Task.stories.js`文件。 同样的，`methods`定义`Task`组件期望的行为 (模拟回调)，而这也是`TaskList`所需要。
 
-现在查看故事书的新内容`TaskList`故事。
+现在查看 Storybook 的 新`TaskList`故事。
 
 <video autoPlay muted playsInline loop>
   <source
@@ -149,9 +149,9 @@ storiesOf('TaskList', module)
   />
 </video>
 
-## 建立国家
+## 建立状态
 
-我们的组件仍然很粗糙，但现在我们已经了解了要努力的故事。你可能会想到`.list-items`包装过于简单化。你是对的 - 在大多数情况下，我们不会只是添加一个包装器来创建一个新组件。但是**真实的复杂性**的`TaskList`组件在边缘情况下显示`withPinnedTasks`，`loading`，和`empty`。
+我们的组件，仍然很粗糙，但现在我们对要努力的故事，有了想法。 你可能会想到`.list-items`包装，过于简单化。 你是对的 - 在大多数情况下，我们不会只是添加一个包装器，来创建一个新的组件。 但是`TaskList`组件**真正的复杂** ，是在边缘情况`withPinnedTasks`，`loading`，和`empty`的显示情况。
 
 ```html
 <template>
@@ -220,7 +220,7 @@ storiesOf('TaskList', module)
 </script>
 ```
 
-添加的标记会产生以下 UI：
+添加的标记语言，会产生以下 UI:
 
 <video autoPlay muted playsInline loop>
   <source
@@ -229,25 +229,25 @@ storiesOf('TaskList', module)
   />
 </video>
 
-请注意列表中固定项的位置。我们希望固定项目在列表顶部呈现，以使其成为我们用户的优先级。
+请注意列表中， 选中项的位置。 我们希望选中项，在列表顶部呈现，以使其成为我们用户的优先事项。
 
 ## 自动化测试
 
-在上一章中，我们学习了如何使用 Storyshots 快照测试故事。同`Task`测试之外没有太多的复杂性，它可以提供。以来`TaskList`增加了另一层复杂性，我们想要验证某些输入以适合自动测试的方式产生某些输出。为此，我们将使用创建单元测试[Jest](https://facebook.github.io/jest/)再加上测试渲染器等[Enzyme](http://airbnb.io/enzyme/)。
+在上一章中，我们学习了如何使用 Storyshots ，进行快照测试 故事。 `Task`测试没有太多的复杂性，已然够用了。 而`TaskList`增加了另一层复杂性，我们希望，用自动测试的方式，验证某些输入，并产生某些输出。 为此，我们将使用[jest-笑话](https://facebook.github.io/jest/)，再加上测试渲染器(例如)[Enzyme](http://airbnb.io/enzyme/)，创建单元测试。
 
 ![Jest logo](/logo-jest.png)
 
 ### 用 Jest 进行单元测试
 
-故事书故事与手动可视化测试和快照测试（见上文）相结合，可以避免 UI 错误。如果故事涵盖了各种各样的组件用例，并且我们使用的工具可以确保人员检查故事的任何变化，那么错误的可能性就大大降低。
+Storybook stories 与手动视觉测试，和快照测试 (见上) 相结合，可以避免 UI 错误。 如果故事涵盖了，各种各样的组件用例，并且我们使用的工具，可以让人检查，确保故事的任何变化，那么错误的可能性，就大大降低。
 
-然而，有时候魔鬼就是细节。需要一个明确有关这些细节的测试框架。这让我们进行了单元测试。
+然而，有时候，魔鬼是在细节中的。一个明确这些细节的测试框架是需要的。这也给我们带来了单元测试。
 
-在我们的例子中，我们想要我们的`TaskList`渲染任何固定的任务**之前**在它中传递的未固定任务`tasks`支柱。虽然我们有一个故事（`withPinnedTasks`）测试这个确切的场景;对于人类评论者来说，如果是组件，则可能是模棱两可的**停止**订购这样的任务，这是一个错误。它肯定不会尖叫**“错误！”**随便的眼睛。
+在我们的例子中，我们希望我们的`TaskList`，在传递不选中的任务之前，渲染所有的选中项。 虽然我们有一个故事 (`withPinnedTasks`) ，测试这个确切的场景; 但是如果组件停止对这样的任务进行排序，那么就人类看着来说，这可能是不明确的，_因为只看到表面与行为_， 这是一个 bug。 但它不会尖叫：**"错误!"**，直怼眼睛。
 
-因此，为了避免这个问题，我们可以使用 Jest 将故事呈现给 DOM 并运行一些 DOM 查询代码来验证输出的显着特征。
+因此，为了避免这个问题，我们可以使用 Jest 将故事呈现给`DOM`，并运行一些`DOM`查询代码，来验证输出的显着特征。
 
-创建一个名为的测试文件`tests/unit/TaskList.spec.js`。在这里，我们将构建我们的测试，对输出进行断言。
+创建一个名为`src/components/TaskList.spec.js`的测试文件。 在这里，我们将构建我们的测试，并对输出进行断言。
 
 ```javascript
 import Vue from 'vue';
@@ -263,13 +263,13 @@ it('renders pinned tasks at the start of the list', () => {
     '.list-item:nth-child(1).TASK_PINNED'
   );
 
-  // We expect the pinned task to be rendered first, not at the end
+  // 我们期望先，渲染选中的任务，而不是最后
   expect(lastTaskInput).not.toBe(null);
 });
 ```
 
 ![TaskList test runner](/tasklist-testrunner.png)
 
-请注意，我们已经能够重用`withPinnedTasks`故事和单元测试中的任务列表;通过这种方式，我们可以继续以越来越多的方式利用现有资源（代表组件的有趣配置的示例）。
+请注意，我们已经能够重用`withPinnedTasks`故事，和单元测试中的任务列表；通过这种方式，我们可以继续，以越来越多的方式，利用现有资源 (一个组件的有趣配置示例) 。
 
-另请注意，此测试非常脆弱。随着项目的成熟，以及项目的确切实施，这可能是可能的`Task`更改 - 可能使用不同的类名 - 测试将失败，需要更新。这不一定是一个问题，而是使用 UI 的单元测试自由地小心的指示。它们不容易维护。而是依靠视觉，快照和视觉回归（参见[testing chapter](/test/)）尽可能测试。
+另请注意，此测试非常脆弱。随着项目的成熟，以及项目的确切实现，这都可能是`Task`的更改 - 可能使用不同的类名，或`textarea`而不是一个`input`- 测试将失败，需要更新。 这不一定是一个问题，但 UI 的单元测试，要小心谨慎。它们不容易维护，替而代之的是，依靠视觉，快照和视觉回归 (参见[测试章节](/test/)) 的 Storybook 测试。

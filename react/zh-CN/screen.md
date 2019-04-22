@@ -58,7 +58,7 @@ PureInboxScreen.defaultProps = {
 export default connect(({error}) => ({error}))(PureInboxScreen);
 ```
 
-我们也改变了`App`组建，用于渲染`InboxScreen` (最终我们会使用一个路由器(router)，来选择正确的页面，但在此不要担心) :
+我们也改变了`App`组件，用于渲染`InboxScreen` (最终我们会使用一个路由器(router)，来选择正确的页面，但在此不要担心) :
 
 ```javascript
 import React, {Component} from 'react';

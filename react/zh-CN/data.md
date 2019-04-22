@@ -119,7 +119,7 @@ export default connect(
 
 在这个阶段，我们的 Storybook 测试将停止工作，因为`TaskList`现在是一个容器，不再需要任何 props，而是连接(connect)到 Store，并在`PureTaskList`(包裹)组件上设置 props。
 
-但是，我们可以通过简单地渲染`PureTaskList`来轻松解决这个问题 - 我们的 Storybook 故事中的表现部分:
+但是，我们可以通过在我们 Storybook stories 里面，简单地渲染`PureTaskList`外观型组件，来轻松解决这个问题:
 
 ```javascript
 import React from 'react';
